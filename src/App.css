@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --clr-main: #c56cee;
+  --clr-main-light: #efdaf9;
+}
+
+.container {
+  position: absolute; /* Posiciona el contenedor de manera absoluta */
+  top: 0; /* Alinea el contenedor al borde superior */
+  left: 0; /* Alinea el contenedor al borde izquierdo */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  padding-inline: 1.5rem;
+  padding-top: 8rem; /* Añadir espacio para la barra de navegación fija */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+  text-align: center;
+}
+
+
+
+/* Estilo del título principal */
+.main-title {
+  margin-top: 1rem;
+  /* text-align: center; Centrar el texto horizontalmente */
+}
+
+
+/* Estilo del título principal */
+
+.navbar {
+  width: 100%; /* Ocupar todo el ancho de la pantalla */
+  position: fixed; /* Fijar la barra en la parte superior */
+  top: 0; /* Asegurarse de que esté en la parte superior */
+  left: 0; /* Asegurarse de que comience desde la izquierda */
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-main);
+  border-bottom: 3px solid black;
+  z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+
+.menu-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.menu-link:hover {
+  text-decoration: underline;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
+  align-items: flex-start; /* Alinea los elementos al principio verticalmente */
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho */
+  padding-top: 2rem;
+}
+
+.productos img {
+  max-width: 100%; /* Para que las imágenes no se desborden del contenedor */
+  height: auto; /* Para mantener la proporción de aspecto de las imágenes */
+}
+
+.producto {
+  flex: 1 1 200px; /* Permite que los productos ocupen un espacio flexible y se envuelvan */
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.producto > div {
+  padding: 1rem;
+  background-color: var(--clr-main-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.producto > img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+}
+
+.producto .ver-mas {
+  text-decoration: none;
+  background-color: var(--clr-main);
+  color: white;
+  padding: .5rem;
+  width: max-content;
+  border-radius: .5rem;
+  transition: .2s;
+
+}
+
+.producto .ver-mas:hover {
+  background-color: black;
+  color: white;
+}
+
+.producto-detalle {
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+.producto-detalle img {
+  width: 100%;
+}
+
+.producto-detalle-info h3 {
+  font-size: 2rem;
+}
+
+.categoria {
+  font-size: .8rem;
+  color: #424242;
+  margin-top: 1rem;
+}
+
+.precio {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.item-count button, .agregar-al-carrito, .enviar {
+  background-color: var(--clr-main);
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  border: 2px solid var(--clr-main);
+  transition: .2s;
+}
+
+.item-count button:hover, .agregar-al-carrito:hover, .enviar:hover {
+  background-color: white;
+  color: black;
+}
+
+.agregar-al-carrito, .enviar {
+  width: auto;
+  height: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-start;
+}
+
+.formulario input {
+  padding: .5rem;
+  width: 18rem;
+  border-radius: .5rem;
+  border: 2px solid black;
+}
+
+.formulario input:focus {
+  outline: 0;
+  border: 2px solid var(--clr-main);
+  outline: 2px solid var(--clr-main);
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
+  position: fixed; /* Cambiado a fixed para que se posicione en relación con la ventana */
+  top: 10px; /* Ajusta la distancia desde la parte superior */
+  left: 10px; /* Ajusta la distancia desde la izquierda */
+  z-index: 1000;
+  margin-top: 8rem;
+}
+
+.menu-line {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+}
+
+.menu {
+  width: 200px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome-message {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+  font-family: 'Arial', sans-serif; /* Cambia la fuente del texto */
+  text-align: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.menu-horizontal {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}

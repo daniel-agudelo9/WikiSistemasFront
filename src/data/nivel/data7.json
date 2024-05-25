@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Desarrollo Móvil",
+        "descripcion": "Creación de aplicaciones móviles para Android e iOS",
+        "codigo": "2508701",
+        "creditos": 4,
+        "nivel": 7
+    },
+    {
+        "id": 2,
+        "titulo": "Big Data",
+        "descripcion": "Técnicas y herramientas para el procesamiento de grandes datos",
+        "codigo": "2508702",
+        "creditos": 3,
+        "nivel": 7
+    },
+    {
+        "id": 3,
+        "titulo": "Robótica",
+        "descripcion": "Introducción a la robótica y sus aplicaciones",
+        "codigo": "2508703",
+        "creditos": 3,
+        "nivel": 7
+    },
+    {
+        "id": 4,
+        "titulo": "Redes Avanzadas",
+        "descripcion": "Estudio avanzado de redes y su administración",
+        "codigo": "2508704",
+        "creditos": 3,
+        "nivel": 7
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 7",
+        "descripcion": "Inglés para profesionales de TI en contextos avanzados",
+        "codigo": "9025107",
+        "creditos": 2,
+        "nivel": 7
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Bases de Datos",
+        "descripcion": "Conceptos y técnicas de bases de datos relacionales",
+        "codigo": "2508401",
+        "creditos": 4,
+        "nivel": 4
+    },
+    {
+        "id": 2,
+        "titulo": "Redes de Computadoras",
+        "descripcion": "Introducción a las redes de computadoras y protocolos de comunicación",
+        "codigo": "2508402",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 3,
+        "titulo": "Ingeniería de Software",
+        "descripcion": "Principios y prácticas de ingeniería de software",
+        "codigo": "2508403",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 4,
+        "titulo": "Algoritmos y Complejidad",
+        "descripcion": "Estudio de algoritmos y análisis de su complejidad",
+        "codigo": "2508404",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 4",
+        "descripcion": "Desarrollo de habilidades avanzadas en inglés técnico",
+        "codigo": "9025104",
+        "creditos": 2,
+        "nivel": 4
+    }
+]

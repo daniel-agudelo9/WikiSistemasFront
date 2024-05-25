@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "titulo": "Introduccion a la ingenieria de sistemas",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2508120",
+        "creditos": 1,
+        "nivel":1
+    },
+    {
+        "id": 2,
+        "titulo": "Descubriendo la fisica",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2536101",
+        "creditos": 3,
+        "nivel":1
+    },
+    {
+        "id": 3,
+        "titulo": "Vivamos la universidad",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "22537101",
+        "creditos": 1,
+        "nivel":1
+    },
+    {
+        "id": 4,
+        "titulo": "Algebra y trigonometria",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2555101",
+        "creditos": 3,
+        "nivel":1
+    },
+    {
+        "id": 5,
+        "titulo": "Geometria vectorial y analitica",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "22555121",
+        "creditos": 3,
+        "nivel":1
+    },
+    {
+        "id": 6,
+        "titulo": "Calculo diferencial",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2555131",
+        "creditos": 3,
+        "nivel":1
+    },
+    {
+        "id": 7,
+        "titulo": "English 1",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "9025101",
+        "creditos": 2,
+        "nivel":1
+    }
+]

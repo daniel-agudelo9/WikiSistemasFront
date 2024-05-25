@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Inteligencia Artificial",
+        "descripcion": "Fundamentos y aplicaciones de la inteligencia artificial",
+        "codigo": "2508601",
+        "creditos": 4,
+        "nivel": 6
+    },
+    {
+        "id": 2,
+        "titulo": "Seguridad Informática",
+        "descripcion": "Principios y prácticas de seguridad en sistemas informáticos",
+        "codigo": "2508602",
+        "creditos": 3,
+        "nivel": 6
+    },
+    {
+        "id": 3,
+        "titulo": "Gestión de Proyectos de TI",
+        "descripcion": "Métodos y técnicas para la gestión de proyectos tecnológicos",
+        "codigo": "2508603",
+        "creditos": 3,
+        "nivel": 6
+    },
+    {
+        "id": 4,
+        "titulo": "Machine Learning",
+        "descripcion": "Introducción al aprendizaje automático y sus aplicaciones",
+        "codigo": "2508604",
+        "creditos": 3,
+        "nivel": 6
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 6",
+        "descripcion": "Perfeccionamiento de habilidades de inglés técnico avanzado",
+        "codigo": "9025106",
+        "creditos": 2,
+        "nivel": 6
+    }
+]

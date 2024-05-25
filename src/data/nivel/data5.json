@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Programación Web",
+        "descripcion": "Desarrollo de aplicaciones web con tecnologías modernas",
+        "codigo": "2508501",
+        "creditos": 4,
+        "nivel": 5
+    },
+    {
+        "id": 2,
+        "titulo": "Análisis de Datos",
+        "descripcion": "Técnicas y herramientas para el análisis de grandes volúmenes de datos",
+        "codigo": "2508502",
+        "creditos": 3,
+        "nivel": 5
+    },
+    {
+        "id": 3,
+        "titulo": "Arquitectura de Computadores",
+        "descripcion": "Estudio de la estructura y funcionamiento de los computadores",
+        "codigo": "2508503",
+        "creditos": 3,
+        "nivel": 5
+    },
+    {
+        "id": 4,
+        "titulo": "Desarrollo de Software",
+        "descripcion": "Metodologías y herramientas para el desarrollo de software",
+        "codigo": "2508504",
+        "creditos": 3,
+        "nivel": 5
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 5",
+        "descripcion": "Mejora de habilidades de comunicación en inglés en contextos técnicos",
+        "codigo": "9025105",
+        "creditos": 2,
+        "nivel": 5
+    }
+]

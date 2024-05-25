@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Estructuras de Datos",
+        "descripcion": "Estudio de estructuras de datos fundamentales y su implementación",
+        "codigo": "2508301",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 2,
+        "titulo": "Programación Orientada a Objetos",
+        "descripcion": "Introducción a la programación orientada a objetos utilizando Java",
+        "codigo": "2508302",
+        "creditos": 4,
+        "nivel": 3
+    },
+    {
+        "id": 3,
+        "titulo": "Estadística y Probabilidades",
+        "descripcion": "Conceptos básicos de estadística y probabilidades",
+        "codigo": "2508303",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 4,
+        "titulo": "Sistemas Operativos",
+        "descripcion": "Fundamentos de sistemas operativos, procesos y gestión de memoria",
+        "codigo": "2508304",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 3",
+        "descripcion": "Avance en las habilidades de inglés, centrado en términos técnicos",
+        "codigo": "9025103",
+        "creditos": 2,
+        "nivel": 3
+    }
+]

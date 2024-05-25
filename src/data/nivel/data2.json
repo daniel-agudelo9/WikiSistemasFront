@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "titulo": "Matematicas discretas",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2508207",
+        "creditos": 3,
+        "nivel":2
+    },
+    {
+        "id": 2,
+        "titulo": "Logica y representacion I",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2508208",
+        "creditos": 3,
+        "nivel":2
+    },
+    {
+        "id": 3,
+        "titulo": "Lectoescritura",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2539101",
+        "creditos": 3,
+        "nivel":2
+    },
+    {
+        "id": 4,
+        "titulo": "Algebra lineal",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2555221",
+        "creditos": 3,
+        "nivel":2
+    },
+    {
+        "id": 5,
+        "titulo": "Calculo integral",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "2555231",
+        "creditos": 3,
+        "nivel":2
+    },
+    {
+        "id": 6,
+        "titulo": "English 2",
+        "descripcion": "Introduccion a lo que se verá en la carrera ingenieria de sistemas",
+        "codigo": "9025102",
+        "creditos": 2,
+        "nivel":1
+    }
+]

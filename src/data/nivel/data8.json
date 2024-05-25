@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Ciberseguridad",
+        "descripcion": "Protección de sistemas informáticos y redes",
+        "codigo": "2508801",
+        "creditos": 4,
+        "nivel": 8
+    },
+    {
+        "id": 2,
+        "titulo": "Computación en la Nube",
+        "descripcion": "Servicios y aplicaciones en la nube",
+        "codigo": "2508802",
+        "creditos": 3,
+        "nivel": 8
+    },
+    {
+        "id": 3,
+        "titulo": "Interfaces Hombre-Máquina",
+        "descripcion": "Diseño y evaluación de interfaces de usuario",
+        "codigo": "2508803",
+        "creditos": 3,
+        "nivel": 8
+    },
+    {
+        "id": 4,
+        "titulo": "Bases de Datos Avanzadas",
+        "descripcion": "Técnicas avanzadas en bases de datos",
+        "codigo": "2508804",
+        "creditos": 3,
+        "nivel": 8
+    },
+    {
+        "id": 5,
+        "titulo": "Inglés 8",
+        "descripcion": "Inglés técnico para entornos de investigación y desarrollo",
+        "codigo": "9025108",
+        "creditos": 2,
+        "nivel": 8
+    }
+]
