@@ -181,12 +181,23 @@
   padding: 1rem;
 }
 
+/* Modifica el archivo App.css */
+
 .formulario {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  align-items: flex-start;
+  align-items: center;
+  max-width: calc(100% - 20px); /* Ancho igual al de la pantalla con márgenes de 10px en cada lado */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
 }
+
+.formulario textarea {
+  width: calc(100% - 20px); /* Ancho igual al de la pantalla con márgenes de 10px en cada lado */
+  max-height: 100px; /* Altura máxima de aproximadamente 10 cm */
+  resize: vertical; /* Permite redimensionar verticalmente el cuadro de texto */
+}
+
 
 .formulario input {
   padding: .5rem;
@@ -267,3 +278,37 @@
   align-items: center;
   gap: 2rem;
 }
+
+/* Añade al final del archivo App.css */
+
+.recursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Distribuye los recursos en cuadrícula */
+  gap: 20px; /* Espacio entre los recursos */
+}
+
+.recurso-wrapper {
+  padding: 10px;
+  border: 2px solid var(--clr-main); /* Borde para cada recurso */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.recurso-text {
+  margin-bottom: 10px; /* Espacio entre el texto del recurso y los botones */
+}
+
+/* Modifica el archivo App.css */
+
+.recurso-wrapper {
+  padding: 10px;
+  border: 2px solid var(--clr-main);
+  border-radius: 8px;
+  word-wrap: break-word; /* Permite que el texto se ajuste al ancho del cuadro */
+  overflow-wrap: break-word; /* Otra propiedad para permitir el ajuste de línea */
+}
+
+.recurso-wrapper input[type="text"],
+.recurso-text {
+  max-width: 100%; /* Establece el ancho máximo del texto dentro del cuadro */
+}
+
