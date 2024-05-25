@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "titulo": "Redes de Computadoras",
+        "descripcion": "Fundamentos de redes y comunicaciones",
+        "codigo": "2508401",
+        "creditos": 4,
+        "nivel": 4
+    },
+    {
+        "id": 2,
+        "titulo": "Sistemas Operativos",
+        "descripcion": "Conceptos y funciones de los sistemas operativos",
+        "codigo": "2508402",
+        "creditos": 4,
+        "nivel": 4
+    },
+    {
+        "id": 3,
+        "titulo": "Ingeniería de Software I",
+        "descripcion": "Introducción a los principios de ingeniería de software",
+        "codigo": "2508403",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 4,
+        "titulo": "Metodos Numericos",
+        "descripcion": "Aplicaciones de métodos numéricos en ingeniería",
+        "codigo": "2555441",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 5,
+        "titulo": "Investigación de Operaciones",
+        "descripcion": "Fundamentos de la investigación de operaciones y optimización",
+        "codigo": "2555451",
+        "creditos": 3,
+        "nivel": 4
+    },
+    {
+        "id": 6,
+        "titulo": "English 4",
+        "descripcion": "Nivel avanzado del idioma inglés",
+        "codigo": "9025104",
+        "creditos": 2,
+        "nivel": 4
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "titulo": "Programacion Orientada a Objetos",
+        "descripcion": "Conceptos básicos de la programación orientada a objetos",
+        "codigo": "2508301",
+        "creditos": 4,
+        "nivel": 3
+    },
+    {
+        "id": 2,
+        "titulo": "Estructuras de Datos",
+        "descripcion": "Introducción a las estructuras de datos",
+        "codigo": "2508302",
+        "creditos": 4,
+        "nivel": 3
+    },
+    {
+        "id": 3,
+        "titulo": "Bases de Datos I",
+        "descripcion": "Fundamentos de bases de datos relacionales",
+        "codigo": "2508303",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 4,
+        "titulo": "Fisica II",
+        "descripcion": "Continuación de los conceptos básicos de la física",
+        "codigo": "2536202",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 5,
+        "titulo": "Calculo Multivariable",
+        "descripcion": "Conceptos avanzados de cálculo en varias variables",
+        "codigo": "2555331",
+        "creditos": 3,
+        "nivel": 3
+    },
+    {
+        "id": 6,
+        "titulo": "English 3",
+        "descripcion": "Avance en el dominio del idioma inglés",
+        "codigo": "9025103",
+        "creditos": 2,
+        "nivel": 3
+    }
+]

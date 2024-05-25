@@ -6,13 +6,15 @@ import data5 from "../data/nivel/data5.json";
 import data6 from "../data/nivel/data6.json";
 import data7 from "../data/nivel/data7.json";
 import data8 from "../data/nivel/data8.json";
+import data9 from "../data/nivel/data9.json";
+import data10 from "../data/nivel/data10.json";
 
-const datasets = [data, data2, data3, data4, data5, data6, data7, data8];
+const datasets = [data, data2, data3, data4, data5, data6, data7, data8,data9,data10];
 
 export const pedirDatos = (nivel) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (nivel >= 1 && nivel <= 8) {
+            if (nivel >= 1 && nivel <= 10) {
                 resolve(datasets[nivel - 1]);
             } else {
                 reject(new Error("Nivel no válido"));
@@ -23,7 +25,7 @@ export const pedirDatos = (nivel) => {
 
 export const pedirItemPorId = (id, nivel) => {
     return new Promise((resolve, reject) => {
-        if (nivel >= 1 && nivel <= 8) {
+        if (nivel >= 1 && nivel <= 10) {
             const dataset = datasets[nivel - 1];
             const item = dataset.find((el) => el.id === id);
             if (item) {
