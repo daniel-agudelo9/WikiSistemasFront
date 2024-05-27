@@ -18,7 +18,7 @@ function App() {
 }
 
 function Main() {
-  const [nivel, setNivel] = useState(0);
+  const [nivel, setNivel] = useState(1);
   const location = useLocation();
 
   useEffect(() => {

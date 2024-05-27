@@ -17,7 +17,7 @@ export const pedirDatos = (nivel) => {
             if (nivel >= 1 && nivel <= 10) {
                 resolve(datasets[nivel - 1]);
             } else {
-                reject(new Error("Nivel no válido"));
+                reject(new Error("Hola mundo"));
             }
         }, 0);
     });

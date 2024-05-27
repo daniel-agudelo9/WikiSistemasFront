@@ -14,7 +14,7 @@ const ItemDetailContainer = ({nivel}) => {
        .then((res) =>{
         setItem(res);
        })
-    }, [id])
+    }, [])
     
   return (
     <div>

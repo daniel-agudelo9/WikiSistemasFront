@@ -11,46 +11,38 @@
 }
 
 .container {
-  position: absolute; /* Posiciona el contenedor de manera absoluta */
-  top: 0; /* Alinea el contenedor al borde superior */
-  left: 0; /* Alinea el contenedor al borde izquierdo */
-  width: 100%; /* Ocupar todo el ancho disponible */
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
   padding-inline: 1.5rem;
-  padding-top: 8rem; /* Añadir espacio para la barra de navegación fija */
-  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+  padding-top: 8rem; 
+  box-sizing: border-box;
   text-align: center;
 }
 
-
-
-/* Estilo del título principal */
 .main-title {
   margin-top: 1rem;
-  /* text-align: center; Centrar el texto horizontalmente */
 }
 
-
-/* Estilo del título principal */
-
 .navbar {
-  width: 100%; /* Ocupar todo el ancho de la pantalla */
-  position: fixed; /* Fijar la barra en la parte superior */
-  top: 0; /* Asegurarse de que esté en la parte superior */
-  left: 0; /* Asegurarse de que comience desde la izquierda */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-main);
   border-bottom: 3px solid black;
-  z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  z-index: 1000;
 }
 
 .logo {
   text-decoration: none;
   color: black;
 }
-
 
 .menu-link {
   text-decoration: none;
@@ -65,22 +57,22 @@
 .productos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Distribuye los elementos uniformemente */
-  align-items: flex-start; /* Alinea los elementos al principio verticalmente */
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
   padding: 2rem;
-  box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
-  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho */
+  box-sizing: border-box;
+  width: 100%;
   padding-top: 2rem;
 }
 
 .productos img {
-  max-width: 100%; /* Para que las imágenes no se desborden del contenedor */
-  height: auto; /* Para mantener la proporción de aspecto de las imágenes */
+  max-width: 100%;
+  height: auto;
 }
 
 .producto {
-  flex: 1 1 200px; /* Permite que los productos ocupen un espacio flexible y se envuelvan */
+  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -108,7 +100,6 @@
   width: max-content;
   border-radius: .5rem;
   transition: .2s;
-
 }
 
 .producto .ver-mas:hover {
@@ -181,23 +172,20 @@
   padding: 1rem;
 }
 
-/* Modifica el archivo App.css */
-
 .formulario {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   align-items: center;
-  max-width: calc(100% - 20px); /* Ancho igual al de la pantalla con márgenes de 10px en cada lado */
-  margin: 0 auto; /* Centra el formulario horizontalmente */
+  width: 100%;
+  padding: 1rem;
 }
 
 .formulario textarea {
-  width: calc(100% - 20px); /* Ancho igual al de la pantalla con márgenes de 10px en cada lado */
-  max-height: 100px; /* Altura máxima de aproximadamente 10 cm */
-  resize: vertical; /* Permite redimensionar verticalmente el cuadro de texto */
+  width: calc(100% - 20px);
+  max-height: 100px;
+  resize: vertical;
 }
-
 
 .formulario input {
   padding: .5rem;
@@ -219,9 +207,9 @@
 
 .menu-icon {
   cursor: pointer;
-  position: fixed; /* Cambiado a fixed para que se posicione en relación con la ventana */
-  top: 10px; /* Ajusta la distancia desde la parte superior */
-  left: 10px; /* Ajusta la distancia desde la izquierda */
+  position: fixed;
+  top: 10px;
+  left: 10px;
   z-index: 1000;
   margin-top: 8rem;
 }
@@ -265,8 +253,8 @@
   font-size: 36px;
   font-weight: bold;
   color: black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
-  font-family: 'Arial', sans-serif; /* Cambia la fuente del texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial', sans-serif;
   text-align: center;
   justify-content: center;
   margin-top: 2rem;
@@ -279,36 +267,90 @@
   gap: 2rem;
 }
 
-/* Añade al final del archivo App.css */
-
 .recursos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Distribuye los recursos en cuadrícula */
-  gap: 20px; /* Espacio entre los recursos */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
-.recurso-wrapper {
-  padding: 10px;
-  border: 2px solid var(--clr-main); /* Borde para cada recurso */
-  border-radius: 8px; /* Bordes redondeados */
-}
-
-.recurso-text {
-  margin-bottom: 10px; /* Espacio entre el texto del recurso y los botones */
-}
-
-/* Modifica el archivo App.css */
 
 .recurso-wrapper {
   padding: 10px;
   border: 2px solid var(--clr-main);
   border-radius: 8px;
-  word-wrap: break-word; /* Permite que el texto se ajuste al ancho del cuadro */
-  overflow-wrap: break-word; /* Otra propiedad para permitir el ajuste de línea */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.recurso-wrapper input[type="text"],
 .recurso-text {
-  max-width: 100%; /* Establece el ancho máximo del texto dentro del cuadro */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: left; /* Cambia text-align a left para que el texto no esté centrado */
+}
+
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ancho de la ventana */
+  height: 100vh; /* Alto de la ventana */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%; /* 90% del ancho de la ventana */
+  height: 90%; /* 90% del alto de la ventana */
+  max-width: 800px; /* Ancho máximo */
+  max-height: 600px; /* Alto máximo */
+  position: relative;
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es muy largo */
+}
+
+
+
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.formulario textarea {
+  width: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  height: calc(100% - 120px); /* Ajusta la altura del textarea al 100% menos un valor específico */
+  max-height: calc(100% - 120px); /* Ajusta la altura máxima del textarea */
+  resize: none;
+}
+
+.formulario input {
+  width: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  padding: .5rem;
+  border-radius: .5rem;
+  border: 2px solid black;
+}
+
+
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
