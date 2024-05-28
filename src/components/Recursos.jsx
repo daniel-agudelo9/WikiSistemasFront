@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import RecursosList from './RecursosList';
+import Modal from './Modal';
 
 const Recursos = () => {
   const [recursos, setRecursos] = useState([]);
   const [textoEditado, setTextoEditado] = useState("");
   const [recursoEditando, setRecursoEditando] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false); 
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,59 +42,47 @@ const Recursos = () => {
       <h1 className='main-title'>Recursos</h1>
       <button onClick={() => setIsModalOpen(true)}>Ingresar Nuevo Material</button>
       <br />
-      <div className="recursos-container">
-        {recursos.map((recurso, index) => (
-          <div key={index} className="recurso-wrapper">
-            {recursoEditando === index ? (
-              <textarea
-                value={textoEditado}
-                onChange={(e) => setTextoEditado(e.target.value)}
-                autoFocus
-                rows="4"
-                cols="50"
-              />
-            ) : (
-              <>
-                <pre className="recurso-text">{recurso}</pre>
-                <button onClick={() => editarRecurso(index)}>Editar</button>
-                <button onClick={() => eliminarRecurso(index)}>Eliminar</button>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+      <RecursosList
+        recursos={recursos}
+        recursoEditando={recursoEditando}
+        textoEditado={textoEditado}
+        setTextoEditado={setTextoEditado}
+        editarRecurso={editarRecurso}
+        eliminarRecurso={eliminarRecurso}
+        convertUrlsToLinks={convertUrlsToLinks}
+      />
       {recursoEditando !== null && (
         <button onClick={actualizarRecurso}>Guardar Cambios</button>
       )}
-      
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={() => setIsModalOpen(false)}>&times;</span>
-            <form className='formulario' onSubmit={handleSubmit}>
-              <textarea name="recurso" placeholder='Ingrese material' rows="4" cols="50"></textarea>
-              <button type="submit">Guardar</button>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* Modal de edición */}
-      {isEditModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={() => setIsEditModalOpen(false)}>&times;</span>
-            <form className='formulario' onSubmit={actualizarRecurso}>
-              <textarea name="recurso" value={textoEditado} onChange={(e) => setTextoEditado(e.target.value)} placeholder='Editar material' rows="4" cols="50"></textarea>
-              <button type="submit">Guardar</button>
-            </form>
-          </div>
-        </div>
-      )}
+      <Modal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        handleSubmit={handleSubmit}
+      />
+      <Modal
+        isModalOpen={isEditModalOpen}
+        setIsModalOpen={setIsEditModalOpen}
+        handleSubmit={actualizarRecurso}
+        textoEditado={textoEditado}
+        setTextoEditado={setTextoEditado}
+      />
     </div>
   );
 };
 
+const convertUrlsToLinks = (text) => {
+  const urlRegex = /https?:\/\/[^\s]+/g;
+  return text.split(urlRegex).reduce((acc, part, index, array) => {
+    if (index < array.length - 1) {
+      const urlMatch = text.match(urlRegex)[index];
+      return acc.concat(part, <a href={urlMatch} target="_blank" rel="noopener noreferrer">{urlMatch}</a>);
+    }
+    return acc.concat(part);
+  }, []);
+};
+
 export default Recursos;
+
+
 
 
