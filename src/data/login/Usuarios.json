@@ -1,0 +1,54 @@
+[
+  {
+      "Nombre": "Juan Perez",
+      "Correo": "juan.perez@example.com",
+      "Contraseña": "contraseña123"
+  },
+  {
+      "Nombre": "Ana Gómez",
+      "Correo": "ana.gomez@example.com",
+      "Contraseña": "password456"
+  },
+  {
+      "Nombre": "Carlos Martínez",
+      "Correo": "carlos.martinez@example.com",
+      "Contraseña": "1234abcd"
+  },
+  {
+      "Nombre": "María Rodríguez",
+      "Correo": "maria.rodriguez@example.com",
+      "Contraseña": "qwerty789"
+  },
+  {
+      "Nombre": "Luis Sánchez",
+      "Correo": "luis.sanchez@example.com",
+      "Contraseña": "contraseña789"
+  },
+  {
+      "Nombre": "Elena Fernández",
+      "Correo": "elena.fernandez@example.com",
+      "Contraseña": "pass1234"
+  },
+  {
+      "Nombre": "Pedro López",
+      "Correo": "pedro.lopez@example.com",
+      "Contraseña": "abcd1234"
+  },
+  {
+      "Nombre": "Lucía Díaz",
+      "Correo": "lucia.diaz@example.com",
+      "Contraseña": "1234qwerty"
+  },
+  {
+      "Nombre": "Sofía Ruiz",
+      "Correo": "sofia.ruiz@example.com",
+      "Contraseña": "password123"
+  },
+  {
+      "Nombre": "Miguel Torres",
+      "Correo": "miguel.torres@example.com",
+      "Contraseña": "contraseña456"
+  }
+]
+
+  

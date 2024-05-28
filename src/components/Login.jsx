@@ -1,61 +1,51 @@
-// Login.js
+// Login.jsx
 import React, { useState } from 'react';
 import '../style/Login.css';
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
+import { getUsers, addUser, findUser } from './../helpers/userHelpers';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [message, setMessage] = useState('');
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
+    setMessage('');
+  };
+
+  const handleLogin = (email, password) => {
+    const user = findUser(email);
+    if (user && user.Contraseña === password) {
+      setMessage('Inicio de sesión exitoso');
+    } else {
+      setMessage('Correo o contraseña incorrectos');
+    }
+  };
+
+  const handleRegister = (name, email, password) => {
+    if (findUser(email)) {
+      setMessage('El correo ya está registrado');
+    } else {
+      addUser({ Nombre: name, Correo: email, Contraseña: password });
+      setMessage('Registro exitoso');
+      toggleForm();
+    }
   };
 
   return (
     <div className='container-login'>
       <div className="login-form-container">
         {isLogin ? (
-          <div>
-            <h2>Iniciar Sesión</h2>
-            <form>
-              <div className="login-form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" required />
-              </div>
-              <div className="login-form-group">
-                <label htmlFor="password">Contraseña:</label>
-                <input type="password" id="password" required />
-              </div>
-              <button type="submit" className="login-button">Iniciar Sesión</button>
-            </form>
-            <p className="login-toggle">
-              ¿No tienes una cuenta? <span onClick={toggleForm}>Regístrate</span>
-            </p>
-          </div>
+          <LoginForm onLogin={handleLogin} toggleForm={toggleForm} />
         ) : (
-          <div>
-            <h2>Registrarse</h2>
-            <form>
-              <div className="login-form-group">
-                <label htmlFor="username">Nombre de Usuario:</label>
-                <input type="text" id="username" required />
-              </div>
-              <div className="login-form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" required />
-              </div>
-              <div className="login-form-group">
-                <label htmlFor="password">Contraseña:</label>
-                <input type="password" id="password" required />
-              </div>
-              <button type="submit" className="login-button">Registrarse</button>
-            </form>
-            <p className="login-toggle">
-              ¿Ya tienes una cuenta? <span onClick={toggleForm}>Inicia Sesión</span>
-            </p>
-          </div>
+          <RegisterForm onRegister={handleRegister} toggleForm={toggleForm} />
         )}
+        {message && <p className="message">{message}</p>}
       </div>
     </div>
   );
 };
 
 export default Login;
+
