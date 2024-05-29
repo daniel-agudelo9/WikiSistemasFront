@@ -1,3 +1,4 @@
+ /* App.css */
 * {
   margin: 0;
   padding: 0;
@@ -355,4 +356,25 @@
 .recurso-text a {
   color: blue;
   text-decoration: underline;
+}
+
+
+/* Aplica a todo el documento */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Contenedor principal de la página */
+.app-background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: url('./assets/trianglify-lowres.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow-y: auto; /* Permite el scroll si el contenido es mayor a la pantalla */
 }

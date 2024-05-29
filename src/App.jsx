@@ -33,19 +33,20 @@ function Main() {
   }, [location]);
 
   return (
-    <div>
+    <div className='app-background'>
       <NavBar />
       <HamburguesaMenu />
       <Routes>
         <Route path='/' element={<Bienvenida />} />
         <Route path='/nosotros' element={<Nosotros />} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/Niveles/:nivel' element={<Niveles nivel={nivel}/>} />
-        <Route path='/item/:id' element={<ItemDetailContainer nivel={nivel}/>} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/Niveles/:nivel' element={<Niveles nivel={nivel} />} />
+        <Route path='/item/:id' element={<ItemDetailContainer nivel={nivel} />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
+
 
