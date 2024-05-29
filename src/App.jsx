@@ -8,6 +8,7 @@ import Bienvenida from './components/Bienvenida';
 import Niveles from './components/Niveles';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Login from "./components/Login";
+import Calculadora from './components/Calculadora';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function Main() {
       <Routes>
         <Route path='/' element={<Bienvenida />} />
         <Route path='/nosotros' element={<Nosotros />} />
+        <Route path='/calculadora' element={<Calculadora/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/Niveles/:nivel' element={<Niveles nivel={nivel} />} />
         <Route path='/item/:id' element={<ItemDetailContainer nivel={nivel} />} />
