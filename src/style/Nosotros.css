@@ -33,6 +33,7 @@
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 /* Ajustes para el texto dentro de los cuadros */
@@ -53,6 +54,7 @@
 .creators h2 {
   font-size: 2rem;
   color: var(--clr-main);
+  color: #4b0082;
 }
 
 .creators-cards {
@@ -81,6 +83,7 @@
   font-size: 1.5rem;
   color: var(--clr-main);
   margin-bottom: 0.5rem;
+  color: #4b0082;
 }
 
 .creator-card p {

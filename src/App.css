@@ -373,7 +373,7 @@ body, html {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background: url('./assets/trianglify-lowres.png') no-repeat center center fixed;
+  background: url('./assets/background.png') no-repeat center center fixed;
   background-size: cover;
   position: relative;
   overflow-y: auto; /* Permite el scroll si el contenido es mayor a la pantalla */

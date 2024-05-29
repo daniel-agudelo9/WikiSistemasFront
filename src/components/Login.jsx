@@ -34,6 +34,7 @@ const Login = () => {
   };
 
   return (
+    <div>
     <div className='container-login'>
       <div className="login-form-container">
         {isLogin ? (
@@ -43,6 +44,7 @@ const Login = () => {
         )}
         {message && <p className="message">{message}</p>}
       </div>
+    </div>
     </div>
   );
 };

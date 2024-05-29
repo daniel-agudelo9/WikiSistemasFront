@@ -4,38 +4,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Altura de la pantalla completa */
-  width: 100vw; /* Ancho de la pantalla completa */
+  height: 100vh;
+  width: 100vw;
 }
 
 .login-form-container {
-  background-color: var(--clr-main);
-  padding: 40px; /* Incrementar el padding para un cuadro más grande */
-  border-radius: 10px;
+  background-color: #d8a7f3; /* Color de fondo del contenedor principal */
+  padding: 3rem; /* Incrementar el padding para un cuadro más grande */
+  border-radius: 8px;
   color: black;
-  width: 500px; /* Incrementar el ancho del cuadro */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Ancho máximo del cuadro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .login-form-group {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem; /* Incrementar el espacio entre grupos de campos */
 }
 
 .login-form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .login-form-group input {
   width: 100%;
-  padding: 10px; /* Incrementar el padding para inputs más grandes */
+  padding: 1rem; /* Incrementar el padding para inputs más grandes */
   border-radius: 5px;
-  border: 2px solid var(--clr-main-light);
+  border: 2px solid #efdaf9; /* Color del borde */
 }
 
 .login-button {
   width: 100%;
-  padding: 15px; /* Incrementar el padding para un botón más grande */
+  padding: 1.2rem; /* Incrementar el padding para un botón más grande */
   border: none;
   border-radius: 5px;
   background-color: #4b0082;
@@ -44,17 +44,16 @@
 }
 
 .login-button:hover {
-  background-color: var(--clr-main-light);
-  color: black;
+  background-color: #c56cee; /* Cambiar el color al pasar el mouse */
 }
 
 .login-toggle {
   text-align: center;
-  margin-top: 20px; /* Incrementar el margen para más separación */
+  margin-top: 1.5rem; /* Incrementar el margen para más separación */
 }
 
 .login-toggle span {
-  color: var(--clr-main-light);
+  color: #4b0082; /* Cambiar el color del texto */
   cursor: pointer;
 }
 
