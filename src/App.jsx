@@ -9,6 +9,7 @@ import Niveles from './components/Niveles';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Login from "./components/Login";
 import Calculadora from './components/Calculadora';
+import Foro from './components/Foro';
 
 function App() {
   return (
@@ -42,8 +43,9 @@ function Main() {
         <Route path='/nosotros' element={<Nosotros />} />
         <Route path='/calculadora' element={<Calculadora/>} />
         <Route path='/login' element={<Login />} />
-        <Route path='/Niveles/:nivel' element={<Niveles nivel={nivel} />} />
-        <Route path='/item/:id' element={<ItemDetailContainer nivel={nivel} />} />
+        <Route path='/Niveles/:nivel' element={<Niveles />} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
+        <Route path='/foro' element={<Foro/>} />
       </Routes>
     </div>
   );

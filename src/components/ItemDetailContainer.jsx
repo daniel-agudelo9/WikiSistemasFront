@@ -1,16 +1,16 @@
 import React from 'react'
-import { pedirItemPorId } from '../helpers/pedirDatos'
+import { pedirItemPorId, pedirMateria } from '../helpers/pedirDatos'
 import ItemDetail from './ItemDetail'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = ({nivel}) => {
+const ItemDetailContainer = () => {
 
     const[item,setItem] = useState(null);
-    const id=useParams().id;
+    const {id}= useParams();
 
     useEffect(() => {
-      pedirItemPorId(Number(id),nivel)
+      pedirMateria(id)
        .then((res) =>{
         setItem(res);
        })

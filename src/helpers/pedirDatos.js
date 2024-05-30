@@ -8,19 +8,33 @@ import data7 from "../data/nivel/data7.json";
 import data8 from "../data/nivel/data8.json";
 import data9 from "../data/nivel/data9.json";
 import data10 from "../data/nivel/data10.json";
+import { baseUrl } from "../utils/constans";
 
 const datasets = [data, data2, data3, data4, data5, data6, data7, data8,data9,data10];
 
 export const pedirDatos = (nivel) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (nivel >= 1 && nivel <= 10) {
+    return new Promise((resolve, reject) => { //fetch link peticion del back localhost:8080/materias/...
+        setTimeout(() => { //convertir lo que me manda el fetch al json 
+            if (nivel >= 1 && nivel <= 10) { //
                 resolve(datasets[nivel - 1]);
             } else {
                 reject(new Error("Hola mundo"));
             }
         }, 0);
     });
+}
+
+
+export const pedirMaterias=(id)=>{
+    return fetch(baseUrl+"/materias/semestre/"+id)
+        .then(response => response.json())
+        .then(data => {return data})
+}
+
+export const pedirMateria=(id)=>{
+    return fetch(baseUrl+"/materias/"+id)
+        .then(response => response.json())
+        .then(data => {return data})
 }
 
 export const pedirItemPorId = (id, nivel) => {
