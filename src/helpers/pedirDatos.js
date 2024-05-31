@@ -14,3 +14,11 @@ export const pedirMateria=(id)=>{
 }
 
 
+export const pedirComentarios = () => {
+    return fetch(baseUrl + "/comentarios")
+      .then(response => response.json())
+      .then(data => { return data });
+  }
+
+
+

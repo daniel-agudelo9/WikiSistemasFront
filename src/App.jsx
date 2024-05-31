@@ -45,7 +45,7 @@ function Main() {
         <Route path='/login' element={<Login />} />
         <Route path='/Niveles/:nivel' element={<Niveles />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} />
-        <Route path='/foro' element={<Foro/>} />
+        <Route path='/comentarios' element={<Foro/>} />
       </Routes>
     </div>
   );
