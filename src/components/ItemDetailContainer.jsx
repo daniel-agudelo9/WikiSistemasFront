@@ -1,5 +1,5 @@
 import React from 'react'
-import { pedirItemPorId, pedirMateria } from '../helpers/pedirDatos'
+import { pedirMateria } from '../helpers/pedirDatos'
 import ItemDetail from './ItemDetail'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'

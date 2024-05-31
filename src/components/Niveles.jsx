@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react'
 import ItemList from './ItemList';
-import { pedirDatos, pedirMaterias } from './../helpers/pedirDatos';
+import {  pedirMaterias } from './../helpers/pedirDatos';
 import ItemDetailContainer from './ItemDetailContainer';
 import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ const Niveles = () => {
   return (
     <div>
       <div className='container'>
-        <h1 className='main-title'>Materias: Nivel {nivel}</h1>
+        <h1 className='main-title'>Materias: Semestre {nivel}</h1>
         <ItemList materias={materias}/>
       </div>
     
