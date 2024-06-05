@@ -34,6 +34,3 @@ const ModalComentario = ({ isModalOpen, setIsModalOpen, handleSubmit }) => {
 };
 
 export default ModalComentario;
-
-
-

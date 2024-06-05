@@ -1,26 +1,40 @@
-// src/components/Modal.js
 import React from 'react';
+import '../style/Modal.css';
 
-const Modal = ({ isModalOpen, setIsModalOpen, handleSubmit, textoEditado, setTextoEditado }) => {
+const Modal = ({ show, handleClose, handleSave, descripcion, setDescripcion, tipoRecursoId, setTipoRecursoId }) => {
+  if (!show) {
+    return null;
+  }
+
   return (
-    isModalOpen && (
-      <div className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={() => setIsModalOpen(false)}>&times;</span>
-          <form className='formulario' onSubmit={handleSubmit}>
-            <textarea
-              name="recurso"
-              placeholder='Ingrese material'
-              value={textoEditado}
-              onChange={(e) => setTextoEditado(e.target.value)}
-              rows="4"
-              cols="50"
-            ></textarea>
-            <button type="submit">Guardar</button>
-          </form>
+    <div className="modal-backdrop">
+      <div className="modal-content">
+        <h2>Añadir Nuevo Recurso</h2>
+        <label>
+          Descripción:
+          <textarea
+            value={descripcion}
+            onChange={(e) => setDescripcion(e.target.value)}
+            rows="4"
+          />
+        </label>
+        <label>
+          Tipo de Recurso:
+          <select value={tipoRecursoId} onChange={(e) => setTipoRecursoId(e.target.value)}>
+            <option value="1">Pdf</option>
+            <option value="2">Texto</option>
+            <option value="3">Video</option>
+            <option value="4">Imagen</option>
+            <option value="5">Audio</option>
+            <option value="6">Otros</option>
+          </select>
+        </label>
+        <div className="modal-buttons">
+          <button onClick={handleSave}>Guardar</button>
+          <button onClick={handleClose}>Cancelar</button>
         </div>
       </div>
-    )
+    </div>
   );
 };
 

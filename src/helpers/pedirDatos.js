@@ -20,5 +20,20 @@ export const pedirComentarios = () => {
       .then(data => { return data });
   }
 
+  export const pedirRecursosPorMateria = async (materiaId) => {
+    try {
+      const response = await fetch(`${baseUrl}/recursos/${materiaId}`);
+      if (!response.ok) {
+        throw new Error('No se pudieron obtener los recursos');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error al obtener recursos:', error.message);
+      return [];
+    }
+  };
+  
+  
 
 

@@ -1,88 +1,84 @@
-import React, { useState } from 'react';
-import RecursosList from './RecursosList';
+import React, { useEffect, useState } from 'react';
+import { pedirRecursosPorMateria } from '../helpers/pedirDatos';
 import Modal from './Modal';
+import '../style/Recursos.css'; // Importa el archivo CSS para estilos
+import { useParams } from 'react-router-dom';
 
 const Recursos = () => {
   const [recursos, setRecursos] = useState([]);
-  const [textoEditado, setTextoEditado] = useState("");
-  const [recursoEditando, setRecursoEditando] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [descripcion, setDescripcion] = useState('');
+  const [tipoRecursoId, setTipoRecursoId] = useState('1');
+  const { id } = useParams();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const nuevoRecurso = event.target.recurso.value;
-    setRecursos([...recursos, nuevoRecurso]);
-    event.target.reset();
-    setIsModalOpen(false);
+  useEffect(() => {
+    pedirRecursosPorMateria(id)
+      .then((data) => setRecursos(data))
+      .catch((error) => console.error('Error al pedir recursos:', error));
+  }, [id]);
+
+  const handleAddRecurso = () => {
+    setShowModal(true);
   };
 
-  const eliminarRecurso = (index) => {
-    const recursosActualizados = recursos.filter((_, i) => i !== index);
-    setRecursos(recursosActualizados);
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setDescripcion('');
+    setTipoRecursoId('1');
   };
 
-  const editarRecurso = (index) => {
-    setRecursoEditando(index);
-    setTextoEditado(recursos[index]);
-    setIsEditModalOpen(true);
-  };
+  const handleSaveRecurso = () => {
+    const nuevoRecurso = {
+      descripcion,
+      materia_id: id,
+      tipo_recurso_id: tipoRecursoId,
+    };
 
-  const actualizarRecurso = () => {
-    const recursosActualizados = [...recursos];
-    recursosActualizados[recursoEditando] = textoEditado;
-    setRecursos(recursosActualizados);
-    setTextoEditado("");
-    setRecursoEditando(null);
-    setIsEditModalOpen(false);
+    console.log('Enviando nuevo recurso:', nuevoRecurso);
+
+    fetch('http://localhost:5000/recursos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(nuevoRecurso),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Error en la respuesta del servidor');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Recurso guardado:', data);
+        setRecursos([...recursos, data]);
+        handleCloseModal();
+      })
+      .catch((error) => console.error('Error al guardar el recurso:', error));
   };
 
   return (
-    <div>
-      <h1 className='main-title'>Recursos</h1>
-      <button onClick={() => setIsModalOpen(true)}>Ingresar Nuevo Material</button>
-      <br />
-      <RecursosList
-        recursos={recursos}
-        recursoEditando={recursoEditando}
-        textoEditado={textoEditado}
-        setTextoEditado={setTextoEditado}
-        editarRecurso={editarRecurso}
-        eliminarRecurso={eliminarRecurso}
-        convertUrlsToLinks={convertUrlsToLinks}
-      />
-      {recursoEditando !== null && (
-        <button onClick={actualizarRecurso}>Guardar Cambios</button>
-      )}
+    <div className="recursos-container">
+      <button className="add-recurso-button" onClick={handleAddRecurso}>
+        Añadir Nuevo Recurso
+      </button>
+      {recursos.map((recurso) => (
+        <div key={recurso.recurso_id} className="recurso-item">
+          <h3 className="recurso-titulo">{recurso.nombre}</h3>
+          <p className="recurso-descripcion">{recurso.descripcion}</p>
+        </div>
+      ))}
       <Modal
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        handleSubmit={handleSubmit}
-      />
-      <Modal
-        isModalOpen={isEditModalOpen}
-        setIsModalOpen={setIsEditModalOpen}
-        handleSubmit={actualizarRecurso}
-        textoEditado={textoEditado}
-        setTextoEditado={setTextoEditado}
+        show={showModal}
+        handleClose={handleCloseModal}
+        handleSave={handleSaveRecurso}
+        descripcion={descripcion}
+        setDescripcion={setDescripcion}
+        tipoRecursoId={tipoRecursoId}
+        setTipoRecursoId={setTipoRecursoId}
       />
     </div>
   );
 };
 
-const convertUrlsToLinks = (text) => {
-  const urlRegex = /https?:\/\/[^\s]+/g;
-  return text.split(urlRegex).reduce((acc, part, index, array) => {
-    if (index < array.length - 1) {
-      const urlMatch = text.match(urlRegex)[index];
-      return acc.concat(part, <a href={urlMatch} target="_blank" rel="noopener noreferrer">{urlMatch}</a>);
-    }
-    return acc.concat(part);
-  }, []);
-};
-
 export default Recursos;
-
-
-
-

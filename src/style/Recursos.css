@@ -1,0 +1,39 @@
+.recursos-container {
+    display: flex;
+    flex-direction: column; /* Asegura que los recursos se apilen verticalmente */
+    gap: 10px; /* Espacio entre los recursos */
+  }
+  
+  .recurso-item {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  
+  .recurso-titulo {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .recurso-descripcion {
+    white-space: pre-wrap; /* Preserva espacios en blanco y saltos de línea */
+  }
+  
+  .add-recurso-button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-recurso-button:hover {
+    background-color: #0056b3;
+  }
+  

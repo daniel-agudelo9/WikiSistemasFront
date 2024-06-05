@@ -1,8 +1,10 @@
-// src/components/RecursosList.js
+// RecursosList.jsx
+
 import React from 'react';
 
 const RecursosList = ({
   recursos,
+  tipoRecursoId,
   recursoEditando,
   textoEditado,
   setTextoEditado,
@@ -14,21 +16,8 @@ const RecursosList = ({
     <div className="recursos-container">
       {recursos.map((recurso, index) => (
         <div key={index} className="recurso-wrapper">
-          {recursoEditando === index ? (
-            <textarea
-              value={textoEditado}
-              onChange={(e) => setTextoEditado(e.target.value)}
-              autoFocus
-              rows="4"
-              cols="50"
-            />
-          ) : (
-            <>
-              <pre className="recurso-text">{convertUrlsToLinks(recurso)}</pre>
-              <button onClick={() => editarRecurso(index)}>Editar</button>
-              <button onClick={() => eliminarRecurso(index)}>Eliminar</button>
-            </>
-          )}
+          <p>Tipo de Recurso: {tipoRecursoId}</p>
+          {/* Resto del código */}
         </div>
       ))}
     </div>
@@ -36,3 +25,5 @@ const RecursosList = ({
 };
 
 export default RecursosList;
+
+
