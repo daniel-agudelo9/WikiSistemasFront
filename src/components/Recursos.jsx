@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { pedirRecursosPorMateria } from '../helpers/pedirDatos';
-import Modal from './Modal';
+import ModalRecursos from './ModalRecursos';
 import '../style/Recursos.css'; // Importa el archivo CSS para estilos
 import { useParams } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ const Recursos = () => {
 
     console.log('Enviando nuevo recurso:', nuevoRecurso);
 
-    fetch('http://localhost:5000/recursos', {
+    fetch('http://localhost:8080/recursos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const Recursos = () => {
           <p className="recurso-descripcion">{recurso.descripcion}</p>
         </div>
       ))}
-      <Modal
+      <ModalRecursos
         show={showModal}
         handleClose={handleCloseModal}
         handleSave={handleSaveRecurso}

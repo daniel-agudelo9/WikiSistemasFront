@@ -17,7 +17,6 @@ const RecursosList = ({
       {recursos.map((recurso, index) => (
         <div key={index} className="recurso-wrapper">
           <p>Tipo de Recurso: {tipoRecursoId}</p>
-          {/* Resto del código */}
         </div>
       ))}
     </div>

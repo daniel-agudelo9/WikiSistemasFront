@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/Modal.css';
 
-const Modal = ({ show, handleClose, handleSave, descripcion, setDescripcion, tipoRecursoId, setTipoRecursoId }) => {
+const ModalRecursos = ({ show, handleClose, handleSave, descripcion, setDescripcion, tipoRecursoId, setTipoRecursoId }) => {
   if (!show) {
     return null;
   }
@@ -38,4 +38,5 @@ const Modal = ({ show, handleClose, handleSave, descripcion, setDescripcion, tip
   );
 };
 
-export default Modal;
+
+export default ModalRecursos;

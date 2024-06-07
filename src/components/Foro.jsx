@@ -17,7 +17,7 @@ const Foro = () => {
   }, []);
 
   const agregarComentario = (descripcion) => {
-    fetch("http://localhost:8080/api/comentarios", {
+    fetch("http://localhost:8080/comentarios", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const Foro = () => {
   };
 
   const eliminarComentario = (comentarioId) => {
-    fetch(`http://localhost:8080/api/comentarios/${comentarioId}`, {
+    fetch(`http://localhost:8080/comentarios/${comentarioId}`, {
       method: "DELETE"
     })
     .then(response => {
