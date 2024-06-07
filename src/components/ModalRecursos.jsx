@@ -38,5 +38,4 @@ const ModalRecursos = ({ show, handleClose, handleSave, descripcion, setDescripc
   );
 };
 
-
 export default ModalRecursos;
