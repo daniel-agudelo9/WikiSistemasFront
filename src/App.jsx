@@ -10,6 +10,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Login from "./components/Login";
 import Calculadora from './components/Calculadora';
 import Foro from './components/Foro';
+import { AuthProvider } from './context/auth';
 
 function App() {
   return (
@@ -36,17 +37,19 @@ function Main() {
 
   return (
     <div className='app-background'>
-      <NavBar />
-      <HamburguesaMenu />
-      <Routes>
-        <Route path='/' element={<Bienvenida />} />
-        <Route path='/nosotros' element={<Nosotros />} />
-        <Route path='/calculadora' element={<Calculadora/>} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/Niveles/:nivel' element={<Niveles />} />
-        <Route path='/item/:id' element={<ItemDetailContainer />} />
-        <Route path='/comentarios' element={<Foro/>} />
-      </Routes>
+      <AuthProvider>
+        <NavBar />
+        <HamburguesaMenu />
+        <Routes>
+          <Route path='/' element={<Bienvenida />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/calculadora' element={<Calculadora/>} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/Niveles/:nivel' element={<Niveles />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/comentarios' element={<Foro/>} />
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }

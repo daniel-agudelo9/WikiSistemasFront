@@ -9,6 +9,7 @@ const Recursos = () => {
   const [showModal, setShowModal] = useState(false);
   const [descripcion, setDescripcion] = useState('');
   const [tipoRecursoId, setTipoRecursoId] = useState('1');
+  const [recursoId, setRecursoId] = useState(null); // Estado para manejar el id del recurso en edición
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,12 +20,14 @@ const Recursos = () => {
 
   const handleAddRecurso = () => {
     setShowModal(true);
+    setRecursoId(null); // Limpiar el id del recurso en edición
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
     setDescripcion('');
     setTipoRecursoId('1');
+    setRecursoId(null); // Limpiar el id del recurso en edición
   };
 
   const handleSaveRecurso = () => {
@@ -34,10 +37,13 @@ const Recursos = () => {
       tipo_recurso_id: tipoRecursoId,
     };
 
-    console.log('Enviando nuevo recurso:', nuevoRecurso);
+    const url = recursoId ? `http://localhost:8080/recursos/${recursoId}` : 'http://localhost:8080/recursos';
+    const method = recursoId ? 'PUT' : 'POST';
 
-    fetch('http://localhost:8080/recursos', {
-      method: 'POST',
+    console.log('Enviando recurso:', nuevoRecurso);
+
+    fetch(url, {
+      method,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,10 +57,36 @@ const Recursos = () => {
       })
       .then((data) => {
         console.log('Recurso guardado:', data);
-        setRecursos([...recursos, data]);
+        if (recursoId) {
+          // Actualizar la lista de recursos
+          setRecursos(recursos.map((rec) => (rec.recurso_id === recursoId ? data : rec)));
+        } else {
+          setRecursos([...recursos, data]);
+        }
         handleCloseModal();
       })
       .catch((error) => console.error('Error al guardar el recurso:', error));
+  };
+
+  const handleEditRecurso = (recurso) => {
+    setDescripcion(recurso.descripcion);
+    setTipoRecursoId(recurso.tipo_recurso_id.toString());
+    setCurrentRecursoId(recurso.recurso_id); // Añade un estado para mantener el id del recurso que se está editando
+    setShowModal(true);
+  };
+
+  const handleDeleteRecurso = (recursoId) => {
+    fetch(`http://localhost:8080/recursos/${recursoId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Error en la respuesta del servidor');
+        }
+        // Actualizar la lista de recursos
+        setRecursos(recursos.filter((rec) => rec.recurso_id !== recursoId));
+      })
+      .catch((error) => console.error('Error al eliminar el recurso:', error));
   };
 
   return (
@@ -66,6 +98,8 @@ const Recursos = () => {
         <div key={recurso.recurso_id} className="recurso-item">
           <h3 className="recurso-titulo">{recurso.nombre}</h3>
           <p className="recurso-descripcion">{recurso.descripcion}</p>
+          <button className="edit-button" onClick={() => handleEditRecurso(recurso)}>Editar</button>
+          <button className="delete-button" onClick={() => handleDeleteRecurso(recurso.recurso_id)}>Eliminar</button>
         </div>
       ))}
       <ModalRecursos

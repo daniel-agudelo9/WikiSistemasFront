@@ -3,34 +3,45 @@ import React, { useState } from 'react';
 import '../style/Login.css';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
-import { getUsers, addUser, findUser } from './../helpers/userHelpers';
+import { getUsers, addUser, findUser, login } from './../helpers/userHelpers';
+import { useAuth } from '../context/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [message, setMessage] = useState('');
+  const auth = useAuth();
+  const navigate=useNavigate();
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
     setMessage('');
   };
 
-  const handleLogin = (email, password) => {
-    const user = findUser(email);
-    if (user && user.Contraseña === password) {
+  const handleLogin = async (email, password) => {
+    const response = await login({correo:email,contrasena:password});
+    console.log(response)
+
+    if (response.status==200) {
       setMessage('Inicio de sesión exitoso');
+      auth.saveUser(response.usuario)
     } else {
       setMessage('Correo o contraseña incorrectos');
     }
   };
 
-  const handleRegister = (name, email, password) => {
-    if (findUser(email)) {
-      setMessage('El correo ya está registrado');
+  const handleRegister = async (name, email, password) => {
+    const response = await addUser({ Nombre: name, Correo: email, Contrasena: password }); 
+    if (response.status==200) {
+      setMessage('Inicio de sesión exitoso');
+      auth.saveUser(response.usuario)
     } else {
-      addUser({ Nombre: name, Correo: email, Contraseña: password });
-      setMessage('Registro exitoso');
-      toggleForm();
+      setMessage('Error: Correo ya esta registrado');
     }
+
+    // setMessage('El correo ya está registrado');
+    // setMessage('Registro exitoso');
+    // toggleForm();
   };
 
   return (

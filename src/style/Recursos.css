@@ -1,39 +1,62 @@
+/* Recursos.css */
 .recursos-container {
-    display: flex;
-    flex-direction: column; /* Asegura que los recursos se apilen verticalmente */
-    gap: 10px; /* Espacio entre los recursos */
-  }
-  
-  .recurso-item {
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    margin: 10px 0;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Alinea el texto a la izquierda */
-  }
-  
-  .recurso-titulo {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  }
-  
-  .recurso-descripcion {
-    white-space: pre-wrap; /* Preserva espacios en blanco y saltos de línea */
-  }
-  
-  .add-recurso-button {
-    margin: 20px 0;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add-recurso-button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 20px;
+}
+
+.add-recurso-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #6f42c1; /* Color morado */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-recurso-button:hover {
+  background-color: #59309b; /* Tonalidad más oscura de morado */
+}
+
+.recurso-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.recurso-titulo {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.recurso-descripcion {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #ffc107; /* Amarillo */
+  color: #000;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Rojo */
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

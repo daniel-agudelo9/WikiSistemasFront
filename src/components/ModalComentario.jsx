@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../style/Comentario.css';
 
-const ModalComentario = ({ isModalOpen, setIsModalOpen, handleSubmit }) => {
+const ModalComentario = ({ isModalOpen, setIsModalOpen, handleSubmit, comentarioParaEditar }) => {
   const [descripcion, setDescripcion] = useState("");
+
+  useEffect(() => {
+    if (comentarioParaEditar) {
+      setDescripcion(comentarioParaEditar.descripcion);
+    } else {
+      setDescripcion("");
+    }
+  }, [comentarioParaEditar]);
 
   const handleGuardar = (event) => {
     event.preventDefault();
