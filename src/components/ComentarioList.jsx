@@ -10,7 +10,7 @@ const ComentariosList = ({ comentarios, onDelete, onEdit }) => {
       {comentarios.map((comentario, index) => (
         <div key={index} className="comentario-wrapper">
           <pre className="comentario-text">{comentario.descripcion}</pre>
-          <p> Comentario por: {comentario.Usuario.nombre} </p>
+          <p> Hecho por: {comentario.Usuario.nombre} </p>
           {(user && user.usuario_id===comentario.usuario_id) &&
             <>
               <button onClick={() => onDelete(comentario.comentario_id)}>Eliminar</button>

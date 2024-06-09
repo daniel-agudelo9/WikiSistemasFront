@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { pedirRecursosPorMateria } from '../helpers/pedirDatos';
 import ModalRecursos from './ModalRecursos';
-import '../style/Recursos.css'; // Importa el archivo CSS para estilos
+import '../style/Recursos.css';
 import { useParams } from 'react-router-dom';
 
 const Recursos = () => {
@@ -16,7 +16,7 @@ const Recursos = () => {
     pedirRecursosPorMateria(id)
       .then((data) => setRecursos(data))
       .catch((error) => console.error('Error al pedir recursos:', error));
-  }, [id]);
+  }, [descripcion]);
 
   const handleAddRecurso = () => {
     setShowModal(true);
@@ -71,7 +71,7 @@ const Recursos = () => {
   const handleEditRecurso = (recurso) => {
     setDescripcion(recurso.descripcion);
     setTipoRecursoId(recurso.tipo_recurso_id.toString());
-    setCurrentRecursoId(recurso.recurso_id); // Añade un estado para mantener el id del recurso que se está editando
+    setRecursoId(recurso.recurso_id); // Cambio aquí
     setShowModal(true);
   };
 
@@ -94,10 +94,11 @@ const Recursos = () => {
       <button className="add-recurso-button" onClick={handleAddRecurso}>
         Añadir Nuevo Recurso
       </button>
-      {recursos.map((recurso) => (
-        <div key={recurso.recurso_id} className="recurso-item">
+      {recursos.map((recurso, index) => (
+        <div key={index} className="recurso-item">
           <h3 className="recurso-titulo">{recurso.nombre}</h3>
           <p className="recurso-descripcion">{recurso.descripcion}</p>
+          <p className="recurso-tipo">Tipo: {recurso.tipo_recurso_id}</p>
           <button className="edit-button" onClick={() => handleEditRecurso(recurso)}>Editar</button>
           <button className="delete-button" onClick={() => handleDeleteRecurso(recurso.recurso_id)}>Eliminar</button>
         </div>

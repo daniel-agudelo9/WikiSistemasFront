@@ -8,7 +8,7 @@ const ModalRecursos = ({ show, handleClose, handleSave, descripcion, setDescripc
 
   return (
     <div className="modal-backdrop">
-      <div className="modal-content">
+      <div className="modal-content modal-recursos"> {/* Cambio de nombre de clase */}
         <h2>Añadir Nuevo Recurso</h2>
         <label>
           Descripción:
