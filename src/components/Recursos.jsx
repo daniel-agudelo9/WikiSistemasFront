@@ -89,6 +89,25 @@ const Recursos = () => {
       .catch((error) => console.error('Error al eliminar el recurso:', error));
   };
 
+  const getTipoRecurso = (tipoRecursoId) => {
+    switch (tipoRecursoId) {
+      case 1:
+        return 'Pdf';
+      case 2:
+        return 'Texto';
+      case 3:
+        return 'Video';
+      case 4:
+        return 'Imagen';
+      case 5:
+        return 'Audio';
+      case 6:
+        return 'Otros';
+      default:
+        return 'Desconocido';
+    }
+  };
+
   return (
     <div className="recursos-container">
       <button className="add-recurso-button" onClick={handleAddRecurso}>
@@ -98,7 +117,7 @@ const Recursos = () => {
         <div key={index} className="recurso-item">
           <h3 className="recurso-titulo">{recurso.nombre}</h3>
           <p className="recurso-descripcion">{recurso.descripcion}</p>
-          <p className="recurso-tipo">Tipo: {recurso.tipo_recurso_id}</p>
+          <p className="recurso-tipo">Tipo: {getTipoRecurso(recurso.tipo_recurso_id)}</p>
           <button className="edit-button" onClick={() => handleEditRecurso(recurso)}>Editar</button>
           <button className="delete-button" onClick={() => handleDeleteRecurso(recurso.recurso_id)}>Eliminar</button>
         </div>

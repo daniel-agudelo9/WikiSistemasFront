@@ -1,12 +1,33 @@
-/* Recursos.css */
+
 .recursos-container {
+  display: flex;
+  flex-direction: column; /* Asegura que los recursos se apilen verticalmente */
+  gap: 10px; /* Espacio entre los recursos */
+}
+
+.recurso-item {
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  margin: 10px 0;
   padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.recurso-titulo {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.recurso-descripcion {
+  white-space: pre-wrap; /* Preserva espacios en blanco y saltos de línea */
 }
 
 .add-recurso-button {
   margin: 20px 0;
   padding: 10px 20px;
-  background-color: #6f42c1; /* Color morado */
+  background-color: #8b6cd1;
   color: white;
   border: none;
   border-radius: 5px;
@@ -14,49 +35,71 @@
 }
 
 .add-recurso-button:hover {
-  background-color: #59309b; /* Tonalidad más oscura de morado */
+  background-color: #8b6cd1;
 }
 
-.recurso-item {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.recurso-titulo {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.recurso-descripcion {
-  font-size: 1em;
-  margin-bottom: 10px;
-}
-
-.edit-button, .delete-button {
+.edit-button,
+.delete-button {
+  margin-right: 10px;
   padding: 5px 10px;
-  margin: 5px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .edit-button {
-  background-color: #ffc107; /* Amarillo */
-  color: #000;
+  color: black;
 }
 
 .edit-button:hover {
-  background-color: #e0a800;
+  background-color: #b89edf;
 }
 
 .delete-button {
-  background-color: #dc3545; /* Rojo */
-  color: #fff;
+  color: black;
 }
 
 .delete-button:hover {
-  background-color: #c82333;
+  background-color: #b89edf;
+}
+
+
+.modal-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ancho de la ventana */
+  height: 100vh; /* Alto de la ventana */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%; /* 90% del ancho de la ventana */
+  height: 90%; /* 90% del alto de la ventana */
+  max-width: 800px; /* Ancho máximo */
+  max-height: 600px; /* Alto máximo */
+  position: relative;
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es muy largo */
+}
+
+.modal-recursos-fullscreen { /* Nueva clase para la ventana de recursos */
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

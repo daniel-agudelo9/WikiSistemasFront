@@ -1,23 +1,32 @@
-import React from 'react';
+// ModalRecursos.jsx
+import React, { useState, useEffect } from 'react';
 import '../style/Modal.css';
 
 const ModalRecursos = ({ show, handleClose, handleSave, descripcion, setDescripcion, tipoRecursoId, setTipoRecursoId }) => {
+  const [modalHeight, setModalHeight] = useState("80vh"); // Altura inicial del modal
+
+  useEffect(() => {
+    // Calcular la altura del modal según la ventana del navegador
+    const windowHeight = window.innerHeight;
+    const modalHeightCalc = windowHeight * 0.8; // El modal ocupará el 80% de la altura de la ventana
+    setModalHeight(`${modalHeightCalc}px`);
+  }, []);
+
   if (!show) {
     return null;
   }
 
   return (
     <div className="modal-backdrop">
-      <div className="modal-content modal-recursos"> {/* Cambio de nombre de clase */}
+      <div className="modal-content modal-recursos" style={{ height: modalHeight }}> {/* Cambio de nombre de clase y altura dinámica */}
         <h2>Añadir Nuevo Recurso</h2>
-        <label>
-          Descripción:
-          <textarea
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
-            rows="4"
-          />
-        </label>
+        <textarea
+          placeholder='Ingrese el recurso...'
+          value={descripcion}
+          onChange={(e) => setDescripcion(e.target.value)}
+          rows="15" // Ajustar la cantidad de filas según sea necesario
+          style={{ width: '100%', marginBottom: '1rem' }} // Ajustar el ancho y margen inferior
+        />
         <label>
           Tipo de Recurso:
           <select value={tipoRecursoId} onChange={(e) => setTipoRecursoId(e.target.value)}>
