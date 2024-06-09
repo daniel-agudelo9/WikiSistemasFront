@@ -1,7 +1,11 @@
 import React from 'react'
 import Recursos from './Recursos'
+import { useAuth } from '../context/auth';
 
 const ItemDetail = ({item}) => {
+
+  const auth = useAuth();
+  const user= auth.getMe();
   return (
     <div className='container'>
         <div className='producto'>
@@ -12,7 +16,9 @@ const ItemDetail = ({item}) => {
                 <h3 className='main-title'>Descripcion: {item.descripcion}</h3>
             </div>
         </div> 
+        { user &&
         <Recursos/>
+        }
     </div>
   )
 }

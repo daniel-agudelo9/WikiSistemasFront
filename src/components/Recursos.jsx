@@ -3,6 +3,7 @@ import { pedirRecursosPorMateria } from '../helpers/pedirDatos';
 import ModalRecursos from './ModalRecursos';
 import '../style/Recursos.css';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../context/auth';
 
 const Recursos = () => {
   const [recursos, setRecursos] = useState([]);
@@ -11,6 +12,8 @@ const Recursos = () => {
   const [tipoRecursoId, setTipoRecursoId] = useState('1');
   const [recursoId, setRecursoId] = useState(null); // Estado para manejar el id del recurso en edición
   const { id } = useParams();
+  const auth = useAuth();
+  const user= auth.getMe();
 
   useEffect(() => {
     pedirRecursosPorMateria(id)
@@ -110,16 +113,22 @@ const Recursos = () => {
 
   return (
     <div className="recursos-container">
+      { (user && user.rol_id==2 || user.rol_id==3)&&
       <button className="add-recurso-button" onClick={handleAddRecurso}>
         Añadir Nuevo Recurso
       </button>
+      } 
       {recursos.map((recurso, index) => (
         <div key={index} className="recurso-item">
           <h3 className="recurso-titulo">{recurso.nombre}</h3>
           <p className="recurso-descripcion">{recurso.descripcion}</p>
           <p className="recurso-tipo">Tipo: {getTipoRecurso(recurso.tipo_recurso_id)}</p>
+          { (user && user.rol_id==3 || user.rol_id==2) && //3 es admin, si es 3 deja editar y eliminar
+          <>
           <button className="edit-button" onClick={() => handleEditRecurso(recurso)}>Editar</button>
           <button className="delete-button" onClick={() => handleDeleteRecurso(recurso.recurso_id)}>Eliminar</button>
+          </>
+          }
         </div>
       ))}
       <ModalRecursos

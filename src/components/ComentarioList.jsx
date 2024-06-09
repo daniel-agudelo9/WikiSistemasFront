@@ -11,7 +11,7 @@ const ComentariosList = ({ comentarios, onDelete, onEdit }) => {
         <div key={index} className="comentario-wrapper">
           <pre className="comentario-text">{comentario.descripcion}</pre>
           <p> Hecho por: {comentario.Usuario.nombre} </p>
-          {(user && user.usuario_id===comentario.usuario_id) &&
+          {(user && user.usuario_id===comentario.usuario_id || user.rol_id==3) &&
             <>
               <button onClick={() => onDelete(comentario.comentario_id)}>Eliminar</button>
               <button onClick={() => onEdit(comentario)}>Editar</button>
