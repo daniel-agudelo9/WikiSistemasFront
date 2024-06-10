@@ -1,0 +1,22 @@
+.materias-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.materias-list {
+  width: 500px;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.materia-item {
+  flex: 1 1 300px; /* Cada elemento ocupa al menos 300px */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}

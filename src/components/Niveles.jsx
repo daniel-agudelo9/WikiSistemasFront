@@ -19,8 +19,8 @@ const Niveles = () => {
     }, [nivel])
 
   return (
-    <div>
-      <div className='container'>
+    <div className='container'>
+      <div className='materias-container'>
         <h1 className='main-title'>Materias: Semestre {nivel}</h1>
         <ItemList materias={materias}/>
       </div>

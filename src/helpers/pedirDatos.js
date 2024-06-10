@@ -34,6 +34,21 @@ export const pedirComentarios = () => {
     }
   };
   
-  
+  // pedirDatos.js
+
+const obtenerProfesores = async () => {
+  try {
+    const respuesta = await fetch('http://localhost:8080/profesores');
+    if (!respuesta.ok) {
+      throw new Error('Error al obtener profesores');
+    }
+    return await respuesta.json();
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+export { obtenerProfesores };
+
 
 

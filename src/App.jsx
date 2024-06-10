@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import Calculadora from './components/Calculadora';
 import Foro from './components/Foro';
 import { AuthProvider } from './context/auth';
+import Profesores from './components/Profesores';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function Main() {
           <Route path='/Niveles/:nivel' element={<Niveles />} />
           <Route path='/item/:id' element={<ItemDetailContainer />} />
           <Route path='/comentarios' element={<Foro/>} />
+          <Route path='/profesores' element={<Profesores/>} />
         </Routes>
       </AuthProvider>
     </div>

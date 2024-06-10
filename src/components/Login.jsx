@@ -11,6 +11,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [message, setMessage] = useState('');
   const auth = useAuth();
+  const user= auth.getMe();
   const navigate=useNavigate();
 
   const toggleForm = () => {

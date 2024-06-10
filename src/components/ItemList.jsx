@@ -1,10 +1,11 @@
 import React from 'react'
 import Item from './Item'
+import '../style/Materias.css';
 
 const ItemList = ({materias}) => {
   return (
-    <div>
-      <div className="productos">
+    <div >
+      <div className="materias-list">
         {materias.map((prod)=> <Item materia={prod} key={prod.materia_id}/>)}
       </div>
     </div>
