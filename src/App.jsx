@@ -12,6 +12,7 @@ import Calculadora from './components/Calculadora';
 import Foro from './components/Foro';
 import { AuthProvider } from './context/auth';
 import Profesores from './components/Profesores';
+import MateriasPorProfesor from './components/MateriasPorProfesor';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function Main() {
           <Route path='/item/:id' element={<ItemDetailContainer />} />
           <Route path='/comentarios' element={<Foro/>} />
           <Route path='/profesores' element={<Profesores/>} />
+          <Route path='/profesores/:profesorId' element={<MateriasPorProfesor />} />
         </Routes>
       </AuthProvider>
     </div>
