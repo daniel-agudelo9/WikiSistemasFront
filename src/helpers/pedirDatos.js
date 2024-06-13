@@ -34,7 +34,7 @@ export const pedirRecursosPorMateria = async (materiaId) => {
   }
 };
 
-const obtenerProfesores = async () => {
+export const obtenerProfesores = async () => {
   try {
     const respuesta = await fetch(baseUrl + "/profesores");
     if (!respuesta.ok) {
@@ -46,7 +46,7 @@ const obtenerProfesores = async () => {
   }
 };
 
-const obtenerMateriasPorProfesor = async (profesorId) => {
+export const obtenerMateriasPorProfesor = async (profesorId) => {
   try {
     const respuesta = await fetch(baseUrl + `/profesores/${profesorId}/materias`);
     if (!respuesta.ok) {
@@ -58,4 +58,74 @@ const obtenerMateriasPorProfesor = async (profesorId) => {
   }
 };
 
-export { obtenerProfesores, obtenerMateriasPorProfesor };
+
+export const pedirTareasPorUsuario = async (usuarioId) => {
+  try {
+    const response = await fetch(`${baseUrl}/tasks/user/${usuarioId}`);
+    if (!response.ok) {
+      throw new Error('No se pudieron obtener las tareas');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al obtener tareas:', error.message);
+    return [];
+  }
+};
+
+export const crearTarea = async (tarea) => {
+  try {
+    const response = await fetch(`${baseUrl}/tasks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(tarea)
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al crear tarea:', error.message);
+    return null;
+  }
+};
+
+export const actualizarTarea = async (tareaId, tarea) => {
+  try {
+    const response = await fetch(`${baseUrl}/tasks/${tareaId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(tarea)
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al actualizar tarea:', error.message);
+    return null;
+  }
+};
+
+export const eliminarTarea = async (tareaId, usuarioId) => {
+  try {
+    const response = await fetch(`${baseUrl}/tasks/${tareaId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ usuario_id: usuarioId }) // Enviar usuario_id en el cuerpo de la solicitud
+    });
+    if (!response.ok) {
+      throw new Error('No se pudo eliminar la tarea');
+    }
+    return true;
+  } catch (error) {
+    console.error('Error al eliminar tarea:', error.message);
+    return false;
+  }
+};
+
+
+
+

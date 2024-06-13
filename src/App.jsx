@@ -14,6 +14,7 @@ import { AuthProvider } from './context/auth';
 import Profesores from './components/Profesores';
 import MateriasPorProfesor from './components/MateriasPorProfesor';
 import MisMaterias from './components/MisMaterias'
+import Task from './components/Task'
 
 function App() {
   return (
@@ -53,7 +54,7 @@ function Main() {
           <Route path='/comentarios' element={<Foro/>} />
           <Route path='/profesores' element={<Profesores/>} />
           <Route path='/profesores/:profesorId' element={<MateriasPorProfesor />} />
-          <Route path='/MisMaterias' element={<MisMaterias/>} />
+          <Route path='/task' element={<Task/>} />
         </Routes>
       </AuthProvider>
     </div>
