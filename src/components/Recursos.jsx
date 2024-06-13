@@ -122,6 +122,7 @@ const Recursos = () => {
         <div key={index} className="recurso-item">
           <h3 className="recurso-titulo">{recurso.nombre}</h3>
           <p className="recurso-descripcion">{recurso.descripcion}</p>
+          <br/>
           <p className="recurso-tipo">Tipo: {getTipoRecurso(recurso.tipo_recurso_id)}</p>
           { (user && user.rol_id==3 || user.rol_id==2) && //3 es admin, si es 3 deja editar y eliminar
           <>

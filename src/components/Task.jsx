@@ -59,7 +59,7 @@ const Task = () => {
 
   return (
     <div className='container'>
-      <h1>Mis pendientes</h1>
+      <h1>Mis Pendientes</h1>
       <button onClick={() => setIsModalOpen(true)}>Agregar Tarea</button>
       <br/>
       <br/>
