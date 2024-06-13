@@ -13,6 +13,7 @@ import Foro from './components/Foro';
 import { AuthProvider } from './context/auth';
 import Profesores from './components/Profesores';
 import MateriasPorProfesor from './components/MateriasPorProfesor';
+import MisMaterias from './components/MisMaterias'
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function Main() {
           <Route path='/comentarios' element={<Foro/>} />
           <Route path='/profesores' element={<Profesores/>} />
           <Route path='/profesores/:profesorId' element={<MateriasPorProfesor />} />
+          <Route path='/MisMaterias' element={<MisMaterias/>} />
         </Routes>
       </AuthProvider>
     </div>

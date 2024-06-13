@@ -95,15 +95,15 @@ const Recursos = () => {
   const getTipoRecurso = (tipoRecursoId) => {
     switch (tipoRecursoId) {
       case 1:
-        return 'Pdf';
+        return 'Parcial';
       case 2:
-        return 'Texto';
+        return 'Taller';
       case 3:
-        return 'Video';
+        return 'Laboratorio';
       case 4:
-        return 'Imagen';
+        return 'Material de clase';
       case 5:
-        return 'Audio';
+        return 'Libro';
       case 6:
         return 'Otros';
       default:

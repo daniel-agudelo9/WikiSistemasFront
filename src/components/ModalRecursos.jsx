@@ -30,11 +30,11 @@ const ModalRecursos = ({ show, handleClose, handleSave, descripcion, setDescripc
         <label>
           Tipo de Recurso:
           <select value={tipoRecursoId} onChange={(e) => setTipoRecursoId(e.target.value)}>
-            <option value="1">Pdf</option>
-            <option value="2">Texto</option>
-            <option value="3">Video</option>
-            <option value="4">Imagen</option>
-            <option value="5">Audio</option>
+            <option value="1">Parcial</option>
+            <option value="2">Taller</option>
+            <option value="3">Laboratorio</option>
+            <option value="4">Material de clase</option>
+            <option value="5">Libro</option>
             <option value="6">Otros</option>
           </select>
         </label>

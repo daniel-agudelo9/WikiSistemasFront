@@ -15,7 +15,8 @@ const Profesores = () => {
   return (
     <div className='container'>
       <div className="profesores-container">
-        <h1 className="profesores-title">Profesores</h1>
+        <h1 >Profesores</h1>
+        <br></br>
         <div className="profesores-list">
           {profesores.map((profesor) => (
             <div key={profesor.profesor_id} className="profesor-item">

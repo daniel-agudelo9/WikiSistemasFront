@@ -15,10 +15,12 @@ function NavBar() {
             <>
               <li><Link className='menu-link' to="/comentarios">Foro</Link></li>
               <li><Link className='menu-link' to="/profesores">Profesores</Link></li>
+              <li><Link className='menu-link' to="/MisMaterias">Mis Materias</Link></li>
             </>
           }
           <li><Link className='menu-link' to="/calculadora">Cálculo de Notas</Link></li>
-          <li><Link className='menu-link' to="/nosotros">Nosotros</Link></li>
+          {/* <li><Link className='menu-link' to="/nosotros">Nosotros</Link></li> */}
+          
           <li>
             <Link className='menu-link' to="/login">
               Login
